@@ -27,7 +27,7 @@ In order to use this library, you must do the following:
 # Library Explanation
 The Library uses the LSA Module with the following Pin Out -
 
-![Image](./.DATA/PORT_A.PNG)
+![Image](./.DATA/PORT_A.png)
 
 # About LSA08
 
@@ -63,7 +63,7 @@ Note: Press and hold Mode button on any main menu will exit the menu.
 
 ### SerialRead
 This example show you to Read values from the LSA using the `LSA08` library on Serial2 without the use of any Buffer.<br>
-File: [LSA08/examples/SerialRead/SerialRead.ino](./examples/SerailRead/SerialRead.ino)<br>
+File: [./examples/SerialRead/SerialRead.ino](./examples/SerialRead/SerialRead.ino)<br>
 
 We simply follow the following steps:
 1. Include library
@@ -77,7 +77,7 @@ We simply follow the following steps:
 
 ### SerialRead_Buffer
 This example show you to Read values from the LSA using the `LSA08` library on Serial2 using a Buffer or by using the Enable Pin (if not Grounded Electronically).<br>
-File: [LSA08/examples/SerialRead_Buffer/SerialRead_Buffer.ino](./examples/SerailRead_Buffer/SerialRead_Buffer.ino)<br>
+File: [./examples/SerialRead_Buffer/SerialRead_Buffer.ino](./examples/SerialRead_Buffer/SerialRead_Buffer.ino)<br>
 
 We simply follow the following steps:
 1. Include library
@@ -91,7 +91,7 @@ We simply follow the following steps:
 
 ### AnalogRead
 This example show you to Read values from the LSA using the `LSA08` library using the Analog Pin.<br>
-File: [LSA08/examples/AnalogRead/AnalogRead.ino](./examples/AnalogRead/AnalogRead.ino)<br>
+File: [./examples/AnalogRead/AnalogRead.ino](./examples/AnalogRead/AnalogRead.ino)<br>
 
 We simply follow the following steps:
 1. Include library
@@ -156,15 +156,15 @@ Let's explore the class now
 - **<font color="#CD00FF">bool</font> bufferPinStatus**: Active Status for the Buffer Control Pin.
 
 #### Member functions
-- **<font color="#CD00FF">void</font><font color="#5052FF">ClearLSA</font> ( ) **: Clear the Junk Values from the LSA.
-- **<font color="#CD00FF">void</font><font color="#5052FF">SetFlag</font> ( ) **: Set the Flag Value for the LSA.
+- **<font color="#CD00FF">void</font><font color="#5052FF">ClearLSA</font> ( )** : Clear the Junk Values from the LSA.
+- **<font color="#CD00FF">void</font><font color="#5052FF">SetFlag</font> ( )** : Set the Flag Value for the LSA.
 
 ### Public members
 #### Members
 - **<font color="#CD00FF">DebuggerSerial</font> debugger**: The debugger for the class. Check the [DebuggerSerial documentation](https://github.com/RoboManipal-9-0/Libraries/tree/master/DebuggerSerial) for more on this.
 
 #### Constructors
-- **<font color="#5052FF">LSA08</font> ( ) **: Empty constructor for the class.
+- **<font color="#5052FF">LSA08</font> ( )** : Empty constructor for the class.
 - **<font color="#5052FF">LSA08</font> ( <font color="#FF00FF">HardwareSerial</font> \*LSASerial )** : To attach a pre-initialized serial to the LSA. This function calls the _AttachSerial_ member function along with the previously mentioned Constructor using Constructor Delegation.
 - **<font color="#5052FF">LSA08</font> ( <font color="#FF00FF">HardwareSerial</font> \*LSASerial , <font color="#FF00FF">int</font> bufferPin , <font color="#FF00FF">bool</font> bufferPinStatus )** : To attach a pre-initialized serial to the LSA on a Buffer. This function calls the _SetBuffer_ member function along with the previously mentioned Constructor using Constructor Delegation.
 - **<font color="#5052FF">LSA08</font> ( <font color="#FF00FF">int</font> analogPin )** : To Set the Pin Number to which the Analog Pin of the LSA is connected. This function calls the _AttachAnalogPin_ member function.
