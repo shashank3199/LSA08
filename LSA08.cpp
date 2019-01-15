@@ -39,7 +39,6 @@ void LSA08 :: SetFlag()
 
 	else
 		this->flagValue = -1;	
-
 }
 
 // #################### Public Member Functions ###################
@@ -92,6 +91,12 @@ bool LSA08 :: operator == (int flagValue)
 bool LSA08 :: operator != (int flagValue)
 {
 	return (this->flagValue != flagValue);
+}
+
+// Assignment Operator for Reading LSA Value to the LSA Object.
+LSA08 :: operator int()
+{
+	return this->ReadLSA();
 }
 
 // Assign Buffer Variables for Serial.
@@ -189,21 +194,8 @@ int LSA08 :: ReadLSA()
 		if(this->bufferStatus)
 		{	
 			// Deactivate the Respective Select Pin.
-			digitalWrite(this > bufferPin,~this->bufferPinStatus);
+			digitalWrite(this->bufferPin,~(this->bufferPinStatus));
 		}	
-		// Set the Flag Value according to the Current Value.
-		SetFlag();
-		// #################### Debugger Output #################
-		// Previous Value: <Previous Value> Current Value: <Current Value> Flag Value: <Flag Value>
-		String msg = "Previous Value: ";
-		msg.concat(this->previousValue);
-		msg.concat("Current Value: ");
-		msg.concat(this->currentValue);		
-		msg.concat("Flag Value: ");
-		msg.concat(this->flagValue);
-		debugger.print(DEBUG,msg);
-		// Return Current Value.
-		return this->currentValue;
 	}
 
 	// ======================== Analog Mode =======================
@@ -221,26 +213,38 @@ int LSA08 :: ReadLSA()
 			this->currentValue = map(raw_analog_value, 0, 920, 0, 70);
 		else
 			this->currentValue = 255;
-		// Set the Flag Value according to the Current Value.
-		SetFlag();
-		// #################### Debugger Output #################
-		// Previous Value: <Previous Value> Current Value: <Current Value> Flag Value: <Flag Value>
-		String msg = "Previous Value: ";
-		msg.concat(this->previousValue);
-		msg.concat("Current Value: ");
-		msg.concat(this->currentValue);		
-		msg.concat("Flag Value: ");
-		msg.concat(this->flagValue);
-		debugger.print(DEBUG,msg);
-		// Return Current Value.
-		return this->currentValue;
+
+		// Round off to nearest Multiple of 5.
+		int temp = currentValue%5;
+		if(temp!=0)
+		{
+			this->currentValue-=temp;
+			if(temp>2)
+				this->currentValue+=5;
+		}
 	}
 
 	// ERROR: Unknown Mode 
 	else
 	{
 		debugger.print("LSA mode not Set.",ERROR);
+		return -1;
 	}
+
+	// Set the Flag Value according to the Current Value.
+	SetFlag();
+
+	// #################### Debugger Output #################
+	// Previous Value: <Previous Value> Current Value: <Current Value> Flag Value: <Flag Value>
+	String msg = "Previous Value: ";
+	msg.concat(this->previousValue);
+	msg.concat(" Current Value: ");
+	msg.concat(this->currentValue);		
+	msg.concat(" Flag Value: ");
+	msg.concat(this->flagValue);
+	debugger.print(DEBUG,msg);
+	// Return Current Value.
+	return this->currentValue;
 }
 
 // Returns the Last Non - 255 Value from the LSA.

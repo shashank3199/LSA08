@@ -1,19 +1,37 @@
-![Version Tag](https://img.shields.io/badge/Version-1.0.0-blue.svg)
-
-![Testing Tag](https://img.shields.io/badge/Status-Testing%20Pending-yellow.svg)
-
-**Note**: This library is still in developer beta, ask the developer before using.
+![Version Tag](https://img.shields.io/badge/Version-1.1.0-blue.svg)
 
 # Introduction
 This library is for the Cytron Line Sensing Array: LSA08 (reference  [here](https://www.cytron.io/p-lsa08)).
+
+# Index
+- [Introduction](#introduction)
+- [Index](#index)
+- [Users Guide](#users-guide)
+    - [Downloading the library](#downloading-the-library)
+    - [Using the library with Arduino](#using-the-library-with-arduino)
+- [Library Explanation](#library-explanation)
+  - [Examples](#examples)
+      - [SerialRead](#SerialRead)
+      - [SerialRead_Buffer](#SerialRead_Buffer)
+      - [AnalogRead](#AnalogRead)
+- [Developers Guide](#developers-guide)
+    - [Library Details](#Library-Details)
+    - [Class contents](#class-contents)
+        - [Private members](#private-members)
+            - [Variables](#variables)
+            - [Member functions](#member-functions)
+        - [Public members](#public-members)
+            - [Constructors](#constructors)
+            - [Member functions](#member-functions)
+- [References](#references)
 
 # User guide
 ## Downloading the library
 It is suggested that you download the entire repository and then select this folder, so that you can enjoy the benifits of VCS like git. It makes it simpler to update the contents whenever patch fixes are done. You can simply open a terminal (or gitbash on windows), go to the folder where you want to save this repository and type the following command.
 ```
-git clone https://github.com/shashank3199/LSA08
+git clone https://github.com/RoboManipal-9-0/Libraries.git
 ```
-**Not recommended**: You can download _only_ this folder by clicking [here](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/shashank3199/LSA08)
+**Not recommended**: You can download _only_ this folder by clicking [here](https://minhaskamal.github.io/DownGit/#/home?url=git clone https://github.com/RoboManipal-9-0/Libraries/LSA08)
 
 ## Using the library with Arduino
 Move this folder into the arduino libraries folder on your PC. If you don't know where the libraries folder of your arduino is, you can click [here](https://www.arduino.cc/en/hacking/libraries).<br>
@@ -172,6 +190,8 @@ Let's explore the class now
 #### Member functions
 - **<font color="#CD00FF">bool</font> operator == ( <font color="#FF00FF">int</font> flagValue )** : Checks for Equality of a Flag Value directly with the LSA Variable.
 - **<font color="#CD00FF">bool</font> operator != ( <font color="#FF00FF">int</font> flagValue )** : Checks for Inequality of a Flag Value directly with the LSA Variable.
+- operator **<font color="#CD00FF">int</font> ( )** : Implicit Type Conversion from Object Type: LSA08 to int Type for Easy Assignment and Comparision.
+
 - **<font color="#CD00FF">void</font> SetBuffer ( <font color="#FF00FF">int</font> bufferPin , <font color="#FF00FF">int</font> bufferPinStatus )** : Sets the Buffer Control Pin and Value for the LSA.
 - **<font color="#CD00FF">void</font> AttachSerial ( <font color="#FF00FF">HardwareSerial</font> \*LSASerial )** : Attach the Serial to the LSA.
 - **<font color="#CD00FF">void</font> AttachSerial ( <font color="#FF00FF">HardwareSerial</font> \*LSASerial , <font color="#FF00FF">int</font> bufferPin , <font color="#FF00FF">bool</font> bufferPinStatus )** : Attach the Serial to the LSA. and Sets the Buffer Control Pin and Value.

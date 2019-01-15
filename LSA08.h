@@ -63,6 +63,8 @@ public:
 	bool operator == (int flagValue);
 	// Check for Flag Values with Inequality
 	bool operator != (int flagValue);
+	// Return the LSA Value as RHS Value.
+	operator int ();
 	// Assign Buffer Control Values.
 	void SetBuffer(int bufferPin,bool bufferPinStatus);
 	// Attach Serial without Buffer.
