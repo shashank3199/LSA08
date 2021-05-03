@@ -22,7 +22,7 @@ This library is for the Cytron Line Sensing Array: LSA08 (reference [here](https
             - [Member functions](#member-functions)
         - [Public members](#public-members)
             - [Constructors](#constructors)
-            - [Member functions](#member-functions)
+            - [Member functions](#member-functions-1)
 - [References](#references)
 
 # User guide
