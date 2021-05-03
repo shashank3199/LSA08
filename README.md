@@ -6,16 +6,16 @@ This library is for the Cytron Line Sensing Array: LSA08 (reference  [here](http
 # Index
 - [Introduction](#introduction)
 - [Index](#index)
-- [Users Guide](#users-guide)
+- [Users Guide](#user-guide)
     - [Downloading the library](#downloading-the-library)
     - [Using the library with Arduino](#using-the-library-with-arduino)
 - [Library Explanation](#library-explanation)
   - [Examples](#examples)
-      - [SerialRead](#SerialRead)
-      - [SerialRead_Buffer](#SerialRead_Buffer)
-      - [AnalogRead](#AnalogRead)
+      - [SerialRead](#serialread)
+      - [SerialRead_Buffer](#serialread_buffer)
+      - [AnalogRead](#analogread)
 - [Developers Guide](#developers-guide)
-    - [Library Details](#Library-Details)
+    - [Library Details](#library-details)
     - [Class contents](#class-contents)
         - [Private members](#private-members)
             - [Variables](#variables)
@@ -29,9 +29,11 @@ This library is for the Cytron Line Sensing Array: LSA08 (reference  [here](http
 ## Downloading the library
 It is suggested that you download the entire repository and then select this folder, so that you can enjoy the benifits of VCS like git. It makes it simpler to update the contents whenever patch fixes are done. You can simply open a terminal (or gitbash on windows), go to the folder where you want to save this repository and type the following command.
 ```
-git clone https://github.com/RoboManipal-9-0/Libraries.git
+git clone https://github.com/shashank3199/LSA08.git
 ```
-**Not recommended**: You can download _only_ this folder by clicking [here](https://minhaskamal.github.io/DownGit/#/home?url=git clone https://github.com/RoboManipal-9-0/Libraries/LSA08)
+**Not recommended**: You can download _only_ this folder by clicking [here](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/shashank3199/LSA08)
+
+_You will also be required to install the **DebuggerSerial Library**._ Please download it from [here](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/RoboManipal-9-0/Libraries/tree/master/DebuggerSerial) 
 
 ## Using the library with Arduino
 Move this folder into the arduino libraries folder on your PC. If you don't know where the libraries folder of your arduino is, you can click [here](https://www.arduino.cc/en/hacking/libraries).<br>
