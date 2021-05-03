@@ -8,7 +8,7 @@
 #define LSA08_h
 
 #include "Arduino.h"
-#include "DebuggerSerial.h"
+#include "DebuggerSerial/src/DebuggerSerial.h"
 
 #define MODE_SERIAL 0
 #define MODE_ANALOG 1
