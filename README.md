@@ -33,8 +33,6 @@ git clone https://github.com/shashank3199/LSA08.git
 ```
 **Not recommended**: You can download _only_ this folder by clicking [here](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/shashank3199/LSA08)
 
-_You will also be required to install the **DebuggerSerial Library**._ Please download it from [here](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/RoboManipal-9-0/Libraries/tree/master/DebuggerSerial) 
-
 ## Using the library with Arduino
 Move this folder into the arduino libraries folder on your PC. If you don't know where the libraries folder of your arduino is, you can click [here](https://www.arduino.cc/en/hacking/libraries).<br>
 Also, this Library makes use of the DebuggerSerial Library. For More Information on this, click [here](https://github.com/RoboManipal-9-0/Libraries/tree/master/DebuggerSerial).
